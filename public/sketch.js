@@ -11,7 +11,7 @@ var pause = false;
 var locked = false;
 var borderx = 43 + 8;
 var bordery = 162 + 8;
-var ts = 12;
+var ts = 13;
 var imgHL;
 var imgHR;
 var imgHU;
@@ -95,7 +95,7 @@ function setup() {
   food = randomLocation()
   textSize(ts);
   fill(255);
-  text(`Points: ${points}`, boardx + 3, 70);
+  text(`Pts: ${points}`, boardx + 3, 70);
   frameRate(0);
   // console.log(food)
 }
@@ -113,7 +113,7 @@ function draw() {
   rect(food.x * rectSize, food.y * rectSize, rectSize, rectSize)
   textSize(ts);
   fill(255);
-  text(`Points: ${points}`, boardx + 3, 70);
+  text(`Pts: ${points}`, boardx + 3, 70);
 }
 
 function inside(point) {
@@ -147,7 +147,7 @@ function keyPressed() {
       locked = true;
       snek.changeDir(1, 0);
     } else if (keyCode === ENTER) {
-      snek.eat();
+      // snek.eat();
     }
   }
 }
@@ -192,6 +192,6 @@ function stopGame() {
   line(boardx, 0, boardx, boardy);
   stroke(0);
   textSize(ts);
-  text(`Points: ${points}`, boardx + 3, 70);
+  text(`Pts: ${points}`, boardx + 3, 70);
   locked = false;
 }
