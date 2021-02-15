@@ -26,6 +26,7 @@ var imgTR;
 var imgTL;
 var imgTD;
 var imgTU;
+var imgF;
 
 var startBtn;
 var pauseBtn;
@@ -47,6 +48,7 @@ function preload() {
   imgTL = loadImage('http://localhost/assets/tl.png');
   imgTD = loadImage('http://localhost/assets/td.png');
   imgTU = loadImage('http://localhost/assets/tu.png');
+  imgF  = loadImage('http://localhost/assets/f.png');
 }
 
 function setup() {
@@ -110,7 +112,7 @@ function draw() {
   rect(boardx, 0, 50, boardy);
   snek.move()
   fill(255, 0, 0)
-  rect(food.x * rectSize, food.y * rectSize, rectSize, rectSize)
+  image(imgF,food.x * rectSize, food.y * rectSize, rectSize, rectSize)
   textSize(ts);
   fill(255);
   text(`Pts: ${points}`, boardx + 3, 70);
